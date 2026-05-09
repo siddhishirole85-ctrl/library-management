@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Dashboard</title>
+
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <div class="container">
+
+    <h1>Library Dashboard</h1>
+
+    <h3 id="welcomeMessage"></h3>
+
+    <div class="dashboard-links">
+
+      <a href="books.html">
+        <button>Manage Books</button>
+      </a>
+
+      <button onclick="logout()">
+        Logout
+      </button>
+
+    </div>
+
+  </div>
+
+  <script>
+
+    const email = localStorage.getItem("userEmail");
+
+    if(email) {
+
+      document.getElementById("welcomeMessage").innerText =
+        "Welcome " + email;
+
+    }
+
+    function logout() {
+
+      localStorage.removeItem("userEmail");
+
+      window.location.href = "login.html";
+
+    }
+
+  </script>
+
+</body>
+</html>
